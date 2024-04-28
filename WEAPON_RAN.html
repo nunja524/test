@@ -4,15 +4,30 @@
   <meta charset="utf-8">
   <title>わくわくブキチ杯</title>
   <style>
+	body{
+	background-color: #e6e6fa;
+	Color:#3b434d;
+	background-image: url(back_raidou.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	}
         p{
             font-size:25px;
         }
         #Button{
             font-size:25px;
+	Color:#3b434d;
 	
         }
         #Button2{
             font-size:25px;
+	Color:#3b434d;
+	
+        }
+        #Button3{
+            font-size:25px;
+	Color:#3b434d;
 	
         }
     span {
@@ -180,7 +195,6 @@ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="an
 "シャープマーカー or ネオ",
 "わかばシューター or もみじシューター",
 "バレルスピナー or デコ",
-"スクイックリンβ",
 "パブロ or ヒュー",
 "パラシェルター or ソレーラ",
 "ヴァリアブルローラー or フォイル",
@@ -233,5 +247,43 @@ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="an
 </script>
 
 <p>※ブキリストは2024年4月現在のものです。クリック一回で結果が表示されます。</p>
+<br>
+<hr>
+<br>
+<h2>スペシャルでブキチ杯!!</h2>
+<p>リクエスト枠、ランダムでスペシャル名がでるよ!!</p>
+  <p>スペシャル杯結果<br>
+<span id="result3">スペシャル名がここに出るよ</span></p>
+  <button id="Button3">Let'sスペシャル杯</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results3 = [
+"サメライド",
+"エナジースタンド",
+"アメフラシ",
+"ウルトラハンコ",
+"ウルトラショット",
+"デコイチラシ",
+"テイオウイカ",
+"カニタンク",
+"ジェットパック",
+"ナイスダマ",
+"ショクワンダー",
+"ホップソナー",
+"メガホンレーザー5.1ch",
+"ウルトラチャクチ",
+"スミナガシート",
+"マルチミサイル",
+"キューインキ",
+"グレートバリア",
+"トリプルトルネード"
+    ];
+    $('#Button3').on('click', function() {
+      var random = Math.floor( Math.random() * results3.length );
+      var result3 =  results3[random];
+      $('#result3').html(result3);
+    });
+</script>
 </body>
 </html>
