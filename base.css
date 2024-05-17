@@ -10,6 +10,11 @@
 	background-position: right bottom;
 	padding: 10px 20px;
 	}
+#main{
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
         p{
             font-size:1.6rem;
         }
@@ -115,7 +120,7 @@
     }
 /*切り替えタブ関係*/
 .tab {
-  width: 800px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
