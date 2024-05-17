@@ -1,124 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="base.css" /> 
   <title>わくわくブキチ杯</title>
-  <style>
-	body{
-	background-color: #e6e6fa;
-	Color:#3b434d;
-	background-image: url(back_raidou.png);
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	padding: 10px 20px;
-	}
-        p{
-            font-size:1.6rem;
-        }
-        #Button{
-        font-size:1.5rem;
-	position: relative;
-	overflow: hidden;
-	text-decoration: none;
-	display:inline-block;
-	background: #3b434d;;
-	color: #fff;
-	padding: 10px 30px;
-	border-radius: 15px;
-	outline: none;
-        }
-        #Button::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #00c9e8 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-        #Button2{
-        font-size:1.5rem;
-	position: relative;
-	overflow: hidden;
-	text-decoration: none;
-	display:inline-block;
-	background: #3b434d;;
-	color: #fff;
-	padding: 10px 30px;
-	border-radius: 15px;
-	outline: none;
-        }
-        #Button2::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #ff8000 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button2:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-        #Button3{
-        font-size:1.5rem;
-	position: relative;
-	overflow: hidden;
-	text-decoration: none;
-	display:inline-block;
-	background: #3b434d;;
-	color: #fff;
-	padding: 10px 30px;
-	border-radius: 15px;
-	outline: none;
-        }
-        #Button3::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button3:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-    span {
-      text-decoration:underline;
-    }
-    </style>
 </head>
 <body>
+	<div class="tab">
+  <input id="tab01" type="radio" name="tab_switch" checked>
+  <label class="tab_label" for="tab01">全ブキ対象</label>
+  <input id="tab02" type="radio" name="tab_switch">
+  <label class="tab_label" for="tab02">メインランダム</label>
+  <input id="tab03" type="radio" name="tab_switch">
+  <label class="tab_label" for="tab03">サブランダム</label>
+  <input id="tab04" type="radio" name="tab_switch">
+  <label class="tab_label" for="tab04">スペシャルランダム</label>
+  <input id="tab05" type="radio" name="tab_switch">
+  <label class="tab_label" for="tab05">武器種ランダム</label>
+
+		
+<!--全武器-->		
+  <div class="tab_content" id="tab01_content">
 <h2>全ブキコミコミブキチ杯!!</h2>
 <p>普通にブキチ杯をしたい方向け、スコープは人によって得意不得意あるので随時選択にしてあるよ!!</p>
   <p>ブキチ杯結果<br>
-<span id="result">ブキ名がここに出るよ</span></p>
+		<span id="result">
+ブキ名がここに出るよ  </span></p>
   <button id="Button">Let'sブキチ杯</button>
   <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
 integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
   <script>
     var results = [
- ".52ガロンデコ",
+ ".52ガロンデコ"　,
 "パブロ",
 "スプラチャージャーコラボ or スプラスコープコラボ",
 "R-PEN/5H",
@@ -241,8 +154,13 @@ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="an
       $('#result').html(result);
     });
 </script>
-<h2>亜種も一緒にブキチ杯!!</h2>
-<p>選択肢を広げたい方向け、亜種武器も一緒に出るのでどっちかを選んでね!!</p>
+  </div>
+		
+		
+<!--メイン武器-->	
+  <div class="tab_content" id="tab02_content">
+<h2>メインでブキチ杯!!</h2>
+<p>全ブキが揃っていない+選択肢を広げたい方向け、亜種も一緒に出るのでどっちかを選んでね!!</p>
   <p>ブキチ杯結果<br>
 <span id="result2">ブキ名がここに出るよ</span></p>
   <button id="Button2">Let'sブキチ杯</button>
@@ -318,20 +236,53 @@ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="an
       $('#result2').html(result2);
     });
 </script>
-
-<p>※ブキリストは2024年4月現在のものです。クリック一回で結果が表示されます。</p>
-<br>
-<hr>
-<br>
-<h2>スペシャルでブキチ杯!!</h2>
-<p>リクエスト枠、ランダムでスペシャル名がでるよ!!</p>
-  <p>スペシャル杯結果<br>
-<span id="result3">スペシャル名がここに出るよ</span></p>
-  <button id="Button3">Let'sスペシャル杯</button>
+  </div>
+		
+<!--サブ武器-->	
+  <div class="tab_content" id="tab03_content">
+<h2>サブでブキチ杯!!</h2>
+<p>リクエスト枠、ランダムでサブウェポンがでるよ!!</p>
+  <p>サブウェポン杯結果<br>
+<span id="result3">サブウェポン名がここに出るよ</span></p>
+  <button id="Button3">Let'sサブウェポン杯</button>
   <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
 integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
   <script>
     var results3 = [
+"カーリングボム",
+"ジャンプビーコン",
+"ラインマーカー",
+"ポイズンミスト",
+"ポイントセンサー",
+"キューバンボム",
+"ロボットボム",
+"クイックボム",
+"スプリンクラー",
+"スプラッシュボム",
+"スプラッシュシールド",
+"タンサンボム",
+"トーピード",
+"トラップ"
+    ];
+    $('#Button3').on('click', function() {
+      var random = Math.floor( Math.random() * results3.length );
+      var result3 =  results3[random];
+      $('#result3').html(result3);
+    });
+</script>
+  </div>
+		
+<!--スペシャル武器-->	
+  <div class="tab_content" id="tab04_content">
+<h2>スペシャルでブキチ杯!!</h2>
+<p>リクエスト枠、ランダムでスペシャル名がでるよ!!</p>
+  <p>スペシャル杯結果<br>
+<span id="result4">スペシャル名がここに出るよ</span></p>
+  <button id="Button4">Let'sスペシャル杯</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results4 = [
 "サメライド",
 "エナジースタンド",
 "アメフラシ",
@@ -352,11 +303,52 @@ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="an
 "グレートバリア",
 "トリプルトルネード"
     ];
-    $('#Button3').on('click', function() {
-      var random = Math.floor( Math.random() * results3.length );
-      var result3 =  results3[random];
-      $('#result3').html(result3);
+    $('#Button4').on('click', function() {
+      var random = Math.floor( Math.random() * results4.length );
+      var result4 =  results4[random];
+      $('#result4').html(result4);
     });
 </script>
+  </div>
+		
+<!--武器種-->	
+<div class="tab_content" id="tab05_content">
+<h2>武器種でブキチ杯!!</h2>
+<p>ランダムで武器種がでるよ!!</p>
+  <p>武器種杯結果<br>
+<span id="result5">武器種がここに出るよ</span></p>
+  <button id="Button5">Let's武器種杯</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results5 = [
+"ブラスター",
+"チャージャー",
+"フデ",
+"ローラー",
+"マニューバー",
+"シューター",
+"スロッシャー",
+"スピナー",
+"ストリンガー",
+"シェルター",
+"ワイパー"
+    ];
+    $('#Button5').on('click', function() {
+      var random = Math.floor( Math.random() * results5.length );
+      var result5 =  results5[random];
+      $('#result5').html(result5);
+    });
+</script>
+  </div>
+</div>
+
+
+
+<p>※ブキリストは2024年4月現在のものです。クリック一回で結果が表示されます。</p>
+<br>
+<hr>
+<br>
+
 </body>
 </html>
