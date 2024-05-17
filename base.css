@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 	body{
+	font-size:7vh;
 	text-size-adjust:100%;
 	background-color: #e6e6fa;
 	Color:#3b434d;
@@ -15,11 +16,14 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+H2{
+	font-size: 110%;
+}
         p{
-            font-size:1.6rem;
+            font-size:100%;
         }
         #Button,#Button2,#Button3,#Button4,#Button5{
-        font-size:1.5rem;
+        font-size:110%;
 	position: relative;
 	overflow: hidden;
 	text-decoration: none;
@@ -120,6 +124,7 @@
     }
 /*切り替えタブ関係*/
 .tab {
+	font-size:20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
