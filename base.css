@@ -17,13 +17,13 @@
 	margin-right: auto;
 }
 H2{
-	font-size: 110%;
+	font-size: 150%;
 }
         p{
-            font-size:100%;
+            font-size:130%;
         }
         #Button,#Button2,#Button3,#Button4,#Button5{
-        font-size:110%;
+        font-size:130%;
 	position: relative;
 	overflow: hidden;
 	text-decoration: none;
@@ -181,7 +181,7 @@ input[name="tab_switch"] {
 #tab04:checked ~ #tab04_content,
 #tab05:checked ~ #tab05_content{
   display: block;
-  min-height: 400px;
+  min-height: 450px;
   height: 30vh;
 }
 
