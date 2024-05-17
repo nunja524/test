@@ -114,7 +114,7 @@
     }
 /*切り替えタブ関係*/
 .tab {
-  width: 100%;
+  width: 800px;
   display: flex;
   flex-wrap: wrap;
 }
