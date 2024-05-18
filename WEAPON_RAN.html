@@ -344,15 +344,60 @@ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="an
     });
 </script>
   </div>
-		<p>※ブキリストは2024年4月現在のものです。クリック一回で結果が表示されます。</p>
+		<div class="line"><p>※ブキリストは2024年4月現在のものです。クリック一回で結果が表示されます。</p></div>
+
+	<div class="tab2">
+  <input id="tab201" type="radio" name="tab_switch2" checked>
+  <label class="tab_label2" for="tab201">3人<br>パーティ</label>
+  <input id="tab202" type="radio" name="tab_switch2">
+  <label class="tab_label2" for="tab202">4人<br>パーティ</label>
+
+
+	<div class="tab_content2" id="tab205_content">
+<h2>ゲームルールランダム</h2>
+<p>主催者用、エリア・ヤグラ・ホコから<br>ゲームルールをランダムに表示するよ</p>
+  <p>ゲームルール結果<br>
+<span id="result6">ゲームルールがここに出るよ</span></p>
+  <button id="Button6">Let'sランダム!</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results6 = [
+"ガチホコ",
+"ガチエリア",
+"ガチヤグラ"
+    ];
+    $('#Button6').on('click', function() {
+      var random = Math.floor( Math.random() * results6.length );
+      var result6 =  results6[random];
+      $('#result6').html(result6);
+    });
+</script>
+  </div>
+		<div class="tab_content2" id="tab206_content">
+<h2>ゲームルールランダム</h2>
+<p>主催者用、エリア・ヤグラ・ホコ・ナワバリから<br>ゲームルールをランダムに表示するよ</p>
+  <p>ゲームルール結果<br>
+<span id="result7">ゲームルールがここに出るよ</span></p>
+  <button id="Button7">Let'sランダム!</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results7 = [
+"ガチホコ",
+"ガチエリア",
+"ナワバリバトル",
+"ガチヤグラ"
+    ];
+    $('#Button7').on('click', function() {
+      var random = Math.floor( Math.random() * results7.length );
+      var result7 =  results7[random];
+      $('#result7').html(result7);
+    });
+</script>
+  </div>
 </div>
-
-
-
-
-<br>
-<hr>
-<br>
+</div>
 </div>
 </body>
 </html>
