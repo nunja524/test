@@ -161,6 +161,17 @@ H2{
     span {
       text-decoration:underline;
     }
+#name01{
+	font-size: 135%;
+}
+table{
+	width: 450px;
+	height: 320px;
+	margin-bottom: 20px;
+}
+td{
+	text-align: center;
+}
 /*切り替えタブ関係*/
 .tab,.tab2 {
 	font-size:20px;
@@ -245,7 +256,7 @@ input[name="tab_switch2"] {
 #tab201:checked ~ #tab205_content,
 #tab202:checked ~ #tab206_content{
   display: block;
-  min-height: 450px;
+  min-height: 680px;
   height: 30vh;
 }
 
