@@ -1,27 +1,30 @@
-
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>ブキ検索ツール</title>
-  <link rel="stylesheet" href="base.css">
+<meta charset="utf-8">
+<title>疑似ブキチ杯ツール</title>
+<link href="base.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="left-panel">
-      <h2>ランダム結果</h2>
-      <div id="random-display">ここにランダム結果が表示されます</div>
-      <button onclick="randomize()">ランダム選出</button>
-    </div>
-    <div class="right-panel">
-      <div id="filter-section" class="filter-section"></div>
-      <div class="list-controls">
-        <button onclick="selectAll()">全選択</button>
-        <button onclick="deselectAll()">全解除</button>
-      </div>
-      <div id="weapon-list" class="weapon-list"></div>
-    </div>
-  </div>
-  <script src="bkt_base.js"></script>
+  <h2>🔍 武器検索ツール</h2>
+  <div class="filters" id="filters"></div>
+  <button onclick="applyFilters()">検索</button>
+  <button onclick="selectAll()">全選択</button>
+  <button onclick="deselectAll()">全解除</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>✔</th><th>名前</th><th>武器種</th><th>サブ</th><th>スペシャル</th><th>シーズン</th>
+      </tr>
+    </thead>
+    <tbody id="weaponTableBody"></tbody>
+  </table>
+
+  <h2>🎲 ランダム武器</h2>
+  <button onclick="randomPick()">ランダムで選ぶ</button>
+  <p id="randomResult"></p>
+	<script src="bkt_base.js"></script>
 </body>
 </html>
