@@ -1,0 +1,57 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #e6e6fa;
+  Color:#3b434d;
+  background-image: url(back_raidou.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.container {
+  display: flex;
+  width: 100%;
+}
+.left-panel {
+  width: 30%;
+  padding: 20px;
+  background: #f0f0f0;
+}
+.right-panel {
+  width: 70%;
+  padding: 20px;
+}
+.filter-section > div {
+  margin-bottom: 10px;
+}
+.filter-btn {
+  margin: 5px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.filter-btn.active {
+  opacity: 1.0;
+}
+.weapon-list {
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.weapon-item {
+  margin: 10px 0;
+}
+button {
+  font-size:130%;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display:inline-block;
+  background: #3b434d;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 15px;
+  outline: none;
+}

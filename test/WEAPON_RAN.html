@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ブキ検索ツール</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>ランダム結果</h2>
+      <div id="random-display">ここにランダム結果が表示されます</div>
+      <button onclick="randomize()">ランダム選出</button>
+    </div>
+    <div class="right-panel">
+      <div id="filter-section" class="filter-section"></div>
+      <div class="list-controls">
+        <button onclick="selectAll()">全選択</button>
+        <button onclick="deselectAll()">全解除</button>
+      </div>
+      <div id="weapon-list" class="weapon-list"></div>
+    </div>
+  </div>
+  <script src="bkt_base.js"></script>
+</body>
+</html>

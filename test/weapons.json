@@ -1,0 +1,17 @@
+
+[
+  {
+    "name": "スプラシューター",
+    "type": "wep_sh.png",
+    "sub": "sub_qb.png",
+    "special": "sp_us.png",
+    "season": "初期実装"
+  },
+  {
+    "name": "バケットスロッシャー",
+    "type": "wep_lo.png",
+    "sub": "sub_cb.png",
+    "special": "sp_sr.png",
+    "season": "2023夏シーズン"
+  }
+]
