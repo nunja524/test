@@ -1,18 +1,17 @@
+
 [
   {
     "name": "スプラシューター",
-    "category": "シューター",
-    "weaponType": "img/wep_sh.png",
-    "sub": "img/sub_qb.png",
-    "special": "img/sp_us.png",
+    "type": "wep_sh.png",
+    "sub": "sub_qb.png",
+    "special": "sp_us.png",
     "season": "初期実装"
   },
   {
-    "name": "スプラローラー",
-    "category": "ローラー",
-    "weaponType": "img/wep_lo.png",
-    "sub": "img/sub_cb.png",
-    "special": "img/sp_sr.png",
+    "name": "バケットスロッシャー",
+    "type": "wep_lo.png",
+    "sub": "sub_cb.png",
+    "special": "sp_sr.png",
     "season": "2023夏シーズン"
   }
 ]
