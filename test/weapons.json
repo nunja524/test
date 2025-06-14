@@ -48,6 +48,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "シャープマーカーGECK",
+   "type": "wep_sh.png",
+   "sub": "sub_pm.png",
+   "special": "sp_af.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "プロモデラーMG<br>(銀モデ)",
    "type": "wep_sh.png",
    "sub": "sub_tb.png",
@@ -64,6 +72,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "プロモデラー彩",
+   "type": "wep_sh.png",
+   "sub": "sub_sb.png",
+   "special": "sp_ss.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "スプラシューター",
    "type": "wep_sh.png",
    "sub": "sub_qb.png",
@@ -77,6 +93,14 @@
    "sub": "sub_spb.png",
    "special": "sp_tt.png",
    "season": "2022冬",
+   "ra_area": "短距離"
+ },
+ {
+   "name": "スプラシューター煌",
+   "type": "wep_sh.png",
+   "sub": "sub_sb.png",
+   "special": "sp_ti.png",
+   "season": "2025夏",
    "ra_area": "短距離"
  },
  {
@@ -128,6 +152,14 @@
    "ra_area": "中距離"
  },
  {
+   "name": "プライムシューターFRZN",
+   "type": "wep_sh.png",
+   "sub": "sub_spb.png",
+   "special": "sp_ms.png",
+   "season": "2025夏",
+   "ra_area": "中距離"
+ },
+ {
    "name": ".96ガロン",
    "type": "wep_sh.png",
    "sub": "sub_sp.png",
@@ -144,6 +176,14 @@
    "ra_area": "中距離"
  },
  {
+   "name": ".96ガロン爪",
+   "type": "wep_sh.png",
+   "sub": "sub_lm.png",
+   "special": "sp_ed.png",
+   "season": "2025夏",
+   "ra_area": "中距離"
+ },
+ {
    "name": "ジェットスイーパー",
    "type": "wep_sh.png",
    "sub": "sub_lm.png",
@@ -157,6 +197,14 @@
    "sub": "sub_pm.png",
    "special": "sp_af.png",
    "season": "2023春",
+   "ra_area": "長距離"
+ },
+ {
+   "name": "ジェットスイーパーCOBR",
+   "type": "wep_sh.png",
+   "sub": "sub_sb.png",
+   "special": "sp_ut.png",
+   "season": "2025夏",
    "ra_area": "長距離"
  },
  {
@@ -192,6 +240,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "L3リールガン箔",
+   "type": "wep_sh.png",
+   "sub": "sub_spb.png",
+   "special": "sp_jp.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "H3リールガン",
    "type": "wep_sh.png",
    "sub": "sub_ps.png",
@@ -205,6 +261,14 @@
    "sub": "sub_ss.png",
    "special": "sp_gb.png",
    "season": "2023夏",
+   "ra_area": "中距離"
+ },
+ {
+   "name": "H3リールガンSNAK",
+   "type": "wep_sh.png",
+   "sub": "sub_qb.png",
+   "special": "sp_tt.png",
+   "season": "2025夏",
    "ra_area": "中距離"
  },
  {
@@ -240,6 +304,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "カーボンローラーANGL",
+   "type": "wep_lo.png",
+   "sub": "sub_tb.png",
+   "special": "sp_dt.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "スプラローラー",
    "type": "wep_lo.png",
    "sub": "sub_cb.png",
@@ -270,6 +342,14 @@
    "special": "sp_dt.png",
    "season": "2023秋",
    "ra_area": "中距離"
+ },
+ {
+   "name": "ダイナモローラー冥",
+   "type": "wep_lo.png",
+   "sub": "sub_ps.png",
+   "special": "sp_mr.png",
+   "season": "2025夏",
+   "ra_area": "長距離"
  },
  {
    "name": "ヴァリアブルローラー",
@@ -304,6 +384,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "ワイドローラー惑",
+   "type": "wep_lo.png",
+   "sub": "sub_tp.png",
+   "special": "sp_ut.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "スクイックリンα",
    "type": "wep_ch.png",
    "sub": "sub_ps.png",
@@ -333,6 +421,14 @@
    "sub": "sub_ss.png",
    "special": "sp_tt.png",
    "season": "2023春",
+   "ra_area": "長距離チャージャー"
+ },
+ {
+   "name": "スプラチャージャーFRST<br>orスコープ",
+   "type": "wep_ch.png",
+   "sub": "sub_sp.png",
+   "special": "sp_ct.png",
+   "season": "2025夏",
    "ra_area": "長距離チャージャー"
  },
  {
@@ -432,6 +528,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "ヒッセンASH",
+   "type": "wep_sl.png",
+   "sub": "sub_spb.png",
+   "special": "sp_ss.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "スクリュースロッシャー",
    "type": "wep_sl.png",
    "sub": "sub_tb.png",
@@ -496,6 +600,14 @@
    "ra_area": "中距離"
  },
  {
+   "name": "モップリン角",
+   "type": "wep_sl.png",
+   "sub": "sub_cb.png",
+   "special": "sp_ct.png",
+   "season": "2025夏",
+   "ra_area": "長距離"
+ },
+ {
    "name": "スプラスピナー",
    "type": "wep_sp.png",
    "sub": "sub_sb.png",
@@ -509,6 +621,14 @@
    "sub": "sub_pm.png",
    "special": "sp_gb.png",
    "season": "2022冬",
+   "ra_area": "中距離"
+ },
+ {
+   "name": "スプラスピナーPYTN",
+   "type": "wep_sp.png",
+   "sub": "sub_jb.png",
+   "special": "sp_us.png",
+   "season": "2025夏",
    "ra_area": "中距離"
  },
  {
@@ -541,6 +661,14 @@
    "sub": "sub_tr.png",
    "special": "sp_ss.png",
    "season": "2024夏",
+   "ra_area": "長距離"
+ },
+ {
+   "name": "ハイドラント圧",
+   "type": "wep_sp.png",
+   "sub": "sub_sp.png",
+   "special": "sp_gb.png",
+   "season": "2025夏",
    "ra_area": "長距離"
  },
  {
@@ -608,6 +736,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "スパッタリーOWL",
+   "type": "wep_mn.png",
+   "sub": "sub_spb.png",
+   "special": "sp_mr.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "スプラマニューバー",
    "type": "wep_mn.png",
    "sub": "sub_qb.png",
@@ -621,6 +757,14 @@
    "sub": "sub_cb.png",
    "special": "sp_ut.png",
    "season": "2023冬",
+   "ra_area": "短距離"
+ },
+ {
+   "name": "スプラマニューバー耀",
+   "type": "wep_mn.png",
+   "sub": "sub_tb.png",
+   "special": "sp_gb.png",
+   "season": "2025夏",
    "ra_area": "短距離"
  },
  {
@@ -653,6 +797,14 @@
    "sub": "sub_jb.png",
    "special": "sp_dt.png",
    "season": "2023夏",
+   "ra_area": "中距離"
+ },
+ {
+   "name": "デュアルスイーパー蹄",
+   "type": "wep_mn.png",
+   "sub": "sub_ps.png",
+   "special": "sp_ss.png",
+   "season": "2025夏",
    "ra_area": "中距離"
  },
  {
@@ -720,6 +872,14 @@
    "ra_area": "中距離"
  },
  {
+   "name": "キャンピングシェルター<br>CREAM",
+   "type": "wep_sy.png",
+   "sub": "sub_pm.png",
+   "special": "sp_dt.png",
+   "season": "2025夏",
+   "ra_area": "中距離"
+ },
+ {
    "name": "スパイガジェット",
    "type": "wep_sy.png",
    "sub": "sub_tr.png",
@@ -733,6 +893,14 @@
    "sub": "sub_tp.png",
    "special": "sp_ss.png",
    "season": "2023冬",
+   "ra_area": "短距離"
+ },
+ {
+   "name": "スパイガジェット繚",
+   "type": "wep_sy.png",
+   "sub": "sub_cb.png",
+   "special": "sp_mr.png",
+   "season": "2025夏",
    "ra_area": "短距離"
  },
  {
@@ -781,6 +949,14 @@
    "sub": "sub_ps.png",
    "special": "sp_ut.png",
    "season": "2023冬",
+   "ra_area": "短距離"
+ },
+ {
+   "name": "ホットブラスター艶",
+   "type": "wep_bl.png",
+   "sub": "sub_jb.png",
+   "special": "sp_ct.png",
+   "season": "2025夏",
    "ra_area": "短距離"
  },
  {
@@ -848,6 +1024,14 @@
    "ra_area": "長距離"
  },
  {
+   "name": "RブラスターエリートWNTR",
+   "type": "wep_bl.png",
+   "sub": "sub_qb.png",
+   "special": "sp_ed.png",
+   "season": "2025夏",
+   "ra_area": "長距離"
+ },
+ {
    "name": "S-BLAST92<br>(通常)",
    "type": "wep_bl.png",
    "sub": "sub_sp.png",
@@ -896,6 +1080,14 @@
    "ra_area": "短距離"
  },
  {
+   "name": "ホクサイ彗",
+   "type": "wep_hd.png",
+   "sub": "sub_rb.png",
+   "special": "sp_ti.png",
+   "season": "2025夏",
+   "ra_area": "短距離"
+ },
+ {
    "name": "フィンセント",
    "type": "wep_hd.png",
    "sub": "sub_cb.png",
@@ -909,6 +1101,14 @@
    "sub": "sub_ps.png",
    "special": "sp_ms.png",
    "season": "2023冬",
+   "ra_area": "短距離"
+ },
+ {
+   "name": "フィンセントBRNZ",
+   "type": "wep_hd.png",
+   "sub": "sub_ss.png",
+   "special": "sp_us.png",
+   "season": "2025夏",
    "ra_area": "短距離"
  },
  {
@@ -928,6 +1128,14 @@
    "ra_area": "長距離"
  },
  {
+   "name": "トライストリンガー燈",
+   "type": "wep_st.png",
+   "sub": "sub_lm.png",
+   "special": "sp_jp.png",
+   "season": "2025夏",
+   "ra_area": "長距離"
+ },
+ {
    "name": "LACT-450",
    "type": "wep_st.png",
    "sub": "sub_cb.png",
@@ -941,6 +1149,14 @@
    "sub": "sub_ss.png",
    "special": "sp_sr.png",
    "season": "2023冬",
+   "ra_area": "中距離"
+ },
+ {
+   "name": "LACT-450MILK",
+   "type": "wep_st.png",
+   "sub": "sub_tp.png",
+   "special": "sp_nd.png",
+   "season": "2025夏",
    "ra_area": "中距離"
  },
  {
@@ -976,6 +1192,14 @@
    "ra_area": "中距離"
  },
  {
+   "name": "ジムワイパー封",
+   "type": "wep_wip.png",
+   "sub": "sub_rb.png",
+   "special": "sp_nd.png",
+   "season": "2025夏",
+   "ra_area": "中距離"
+ },
+ {
    "name": "ドライブワイパー",
    "type": "wep_wip.png",
    "sub": "sub_tp.png",
@@ -989,6 +1213,14 @@
    "sub": "sub_jb.png",
    "special": "sp_ms.png",
    "season": "2023夏",
+   "ra_area": "短距離"
+ },
+ {
+   "name": "ドライブワイパーRUST",
+   "type": "wep_wip.png",
+   "sub": "sub_cb.png",
+   "special": "sp_us.png",
+   "season": "2025夏",
    "ra_area": "短距離"
  },
  {
