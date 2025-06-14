@@ -201,23 +201,19 @@ function randomizeALL() {
   const savedChecks = loadCheckedWeapons();
   const checkedWeapons = weapons.filter(w => savedChecks[w.name]);
   const display = document.getElementById("random-display");
-  if (checkedWeapons.length === 0) {
- document.getElementById("name01").innerHTML  = "選択された武器がありません。";
+if (checkedWeapons.length === 0) {
+    document.getElementById("name01").innerText = "選択された武器がありません。";
+    document.getElementById("weapon01").innerText = "";
+    document.getElementById("sub01").innerText = "";
+    document.getElementById("special01").innerText = "";
     return;
   }
   const r = Math.floor(Math.random() * checkedWeapons.length);
 const selected = checkedWeapons[r];
 
-// ブキ名（テキスト）
 document.getElementById("name01").innerHTML = selected.name;
-
-// 武器種（画像）
 document.getElementById("weapon01").innerHTML = `<img src="img/${selected.type}" alt="武器種" >`;
-
-// サブ（画像）
 document.getElementById("sub01").innerHTML = `<img src="img/${selected.sub}" alt="サブ">`;
-
-// スペシャル（画像）
 document.getElementById("special01").innerHTML = `<img src="img/${selected.special}" alt="スペシャル">`;
 
 }
@@ -237,9 +233,7 @@ function randomize() {
   const r = Math.floor(Math.random() * checkedWeapons.length);
   const selected = checkedWeapons[r];
 
-  document.getElementById("name01").innerText = selected.name;
-
-  // 🔽以下を innerText から <img> 要素に修正
+  document.getElementById("name01").innerHTML = selected.name;
   document.getElementById("weapon01").innerHTML = `<img src="img/${selected.type}" alt="武器種">`;
   document.getElementById("sub01").innerHTML = `<img src="img/${selected.sub}" alt="サブ">`;
   document.getElementById("special01").innerHTML = `<img src="img/${selected.special}" alt="スペシャル">`;
