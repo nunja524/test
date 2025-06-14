@@ -184,11 +184,18 @@ function selectAll() {
 }
 
 function deselectAll() {
+  const checks = loadCheckedWeapons(); // 既存の状態を読み込む
+
+  // 表示されているチェックボックスだけ変更
   document.querySelectorAll(".weapon-check").forEach(cb => {
     cb.checked = false;
+    checks[cb.dataset.name] = false; // 表示されている分だけ上書き
   });
-  saveCheckedWeapons();
+
+  localStorage.setItem("checkedWeapons", JSON.stringify(checks));
 }
+
+
 
 function randomizeALL() {
   const savedChecks = loadCheckedWeapons();
@@ -216,26 +223,26 @@ document.getElementById("special01").innerHTML = `<img src="img/${selected.speci
 }
 
 function randomize() {
-  const checked = Array.from(document.querySelectorAll(".weapon-check:checked"));
-  const display = document.getElementById("random-display");
-  if (checked.length === 0) {
-  document.getElementById("name01").innerHTML = "選択された武器がありません。";
+  const savedChecks = loadCheckedWeapons();
+  const checkedWeapons = filteredWeapons.filter(w => savedChecks[w.name]);
+
+  if (checkedWeapons.length === 0) {
+    document.getElementById("name01").innerText = "選択された武器がありません。";
+    document.getElementById("weapon01").innerText = "";
+    document.getElementById("sub01").innerText = "";
+    document.getElementById("special01").innerText = "";
     return;
   }
-  const r = Math.floor(Math.random() * checked.length);
-const selected2 = checked[r].dataset;
 
-// ブキ名（テキスト）
-document.getElementById("name01").innerHTML = selected2.name;
+  const r = Math.floor(Math.random() * checkedWeapons.length);
+  const selected = checkedWeapons[r];
 
-// 武器種（画像）
-document.getElementById("weapon01").innerHTML = `<img src="img/${selected2.type}" alt="武器種">`;
+  document.getElementById("name01").innerText = selected.name;
 
-// サブ（画像）
-document.getElementById("sub01").innerHTML = `<img src="img/${selected.sub}" alt="サブ">`;
-
-// スペシャル（画像）
-document.getElementById("special01").innerHTML = `<img src="img/${selected.special}" alt="スペシャル">`;
+  // 🔽以下を innerText から <img> 要素に修正
+  document.getElementById("weapon01").innerHTML = `<img src="img/${selected.type}" alt="武器種">`;
+  document.getElementById("sub01").innerHTML = `<img src="img/${selected.sub}" alt="サブ">`;
+  document.getElementById("special01").innerHTML = `<img src="img/${selected.special}" alt="スペシャル">`;
 }
 
 loadWeapons();
