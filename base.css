@@ -1,45 +1,90 @@
-@charset "utf-8";
-/* CSS Document */
-	body{
-	font-size:7vh;
-	text-size-adjust:100%;
-	background-color: #e6e6fa;
-	Color:#3b434d;
-	background-image: url(back_raidou.png);
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	padding: 10px 20px;
-	}
-#main{
-	width: 700px;
-	margin-left: auto;
-	margin-right: auto;
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #e6e6fa;
+  Color:#3b434d;
+  background-image: url(back_raidou.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
-H2{
-	font-size: 150%;
+h2{
+
 }
-.line{
-	width: 100%;
-	border-bottom: dotted 1px;
-	margin-bottom: 30px;
+ table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+table img{
+	height: 50px;
 }
-        p{
-            font-size:130%;
-        }
-        #Button,#Button2,#Button3,#Button4,#Button5,#Button6,#Button7{
-        font-size:130%;
-	position: relative;
-	overflow: hidden;
-	text-decoration: none;
-	display:inline-block;
-	background: #3b434d;;
-	color: #fff;
-	padding: 10px 30px;
-	border-radius: 15px;
-	outline: none;
-        }
-        #Button::after {
+    td, th { height: 60px; border: 1px solid #777; padding: 4px; text-align: center; }
+    img { height: 28px; }
+    .filters { margin-bottom: 10px; }
+    .filter-group { margin: 7px 0;
+}
+.filter-option img {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.3; /* 初期はOFF状態 */
+  transition: 0.2s;
+}
+.filter-option img.active {
+  border-color: #00c;
+  opacity: 1;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.left-panel {
+  width: 35%;
+  height: 100%;
+  padding: 5px 20px;
+  background:#BAACD5 ;
+}
+.right-panel {
+  width: 65%;
+  padding: 5px 20px;
+}
+.filter-section > div {
+  margin-bottom: 10px;
+}
+.filter-btn {
+  margin: 5px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.filter-btn.active {
+  opacity: 1.0;
+}
+.weapon-list {
+  width: 95%;
+  height: 60vh;
+  min-height: 500px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.weapon-item {
+  margin: 10px 0;
+}
+button {
+  margin: 7px 5px;
+  font-size:130%;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display:inline-block;
+  background: #3b434d;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 15px;
+  outline: none;
+}
+        Button::after {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -51,7 +96,7 @@ H2{
 	opacity: 0;
 	transition: transform 0.3s, opacity 1s;
 }
-	#Button:active::after {
+	Button:active::after {
 	transform: scale(0, 0);
 	transition: 0s;
 	opacity: 0.3;
@@ -73,199 +118,139 @@ H2{
 	transition: 0s;
 	opacity: 0.3;
 }
-        #Button3::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button3:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-        #Button4::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button4:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-        #Button5::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button5:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-        #Button6:after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button6:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-        #Button7:after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
-	transform: scale(10, 10);
-	opacity: 0;
-	transition: transform 0.3s, opacity 1s;
-}
-	#Button7:active::after {
-	transform: scale(0, 0);
-	transition: 0s;
-	opacity: 0.3;
-}
-    span {
-      text-decoration:underline;
-    }
-#name01,#name02{
-	font-size: 135%;
-}
-table{
-	width: 450px;
-	height: 320px;
-	margin-bottom: 20px;
-}
-td{
-	text-align: center;
-}
-/*切り替えタブ関係*/
-.tab,.tab2 {
-	font-size:20px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tab_label,.tab_label2 {
-  color: #5e51a8;
+.season-badge, .ra_area-badge {
+  margin: 5px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  color: white;
   font-weight: bold;
-  text-align: center;
-  border: solid 2px #5e51a8;
+}
+@media (max-width: 962px) {
+  .container {
+	 width: 95%;
+    flex-direction: column;
+  }
+  .search-section {
+    order: -1;
+  }
+	.weapon-list {
+  min-height: 500px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+	.left-panel {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+	.right-panel {
+  width: 100%;
+  padding: 20px;
+}
+}
+
+/* 例: シーズン別色付け */
+.season-初期実装 { 
+	  color: #555;
+	background-color: hsl(0, 0%, 100%); }
+.season-2022冬, .ra_area-短距離 { background-color: hsl(0, 70%, 50%); }
+.season-2023春, .ra_area-中距離 { background-color: hsl(27, 70%, 50%); }
+.season-2023夏, .ra_area-長距離 { background-color: hsl(54, 50%, 50%); }
+.season-2023秋 { background-color: hsl(81, 70%, 30%); }
+.season-2023冬 { background-color: hsl(108, 70%, 30%); }
+.season-2024春, .ra_area-短距離チャージャー { background-color: hsl(135, 70%, 30%); }
+.season-2024夏 { background-color: hsl(162, 70%, 30%); }
+.season-2025夏, .ra_area-長距離チャージャー { background-color: hsl(189, 70%, 50%); }
+.season-2025仮 { background-color: hsl(216, 70%, 50%); }
+.season-2025仮2 { background-color: hsl(233, 70%, 50%); }
+
+/* グレー背景 */
+.layer {
+  background: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+  position: fixed; /* 画面に固定するために指定 */
+  top: 0;
+  left: 0;  /* 追記 */
+  z-index: -1; 
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* モーダルコンテンツ */
+.modal {
   position: relative;
-  z-index: 1;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  min-width: 440px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal__inner {
+  margin-top: 125px;
+  margin-bottom: 125px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);/* モーダルにシャドウをかける */
+  border-radius: 13px; /* モーダルの角を丸める */
+  display: block;
+  padding: 21px 8px 21px;
+  height: auto;
+}
+
+.modal__content {
+  padding-top: 15px;
+  padding-bottom: 23px;
+}
+.modal__button-wrap {
+  position: absolute;
+  right: 10px;
+  top: -28px;
+  display: inline-flex;
+}
+
+.close-button {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  background: #61358C;
+  border-radius: 50%;
+  padding: 0;
+  border: transparent;
   cursor: pointer;
-  flex: 1;
-  padding: 15px 0;
-  margin: 0 5px; 
-  border-radius: 5px;
 }
 
-.tab_label:hover {
-  opacity: 0.75;
-  text-align: center;
-}
-.tab_label2:hover {
-  opacity: 0.75;
-  text-align: center;
-}
-.tab_content,.tab_content2 {
-  flex: 100%;
-  display: none;
-  overflow: hidden;
-}
-
-input[name="tab_switch"] {
-  display: none;
-}
-input[name="tab_switch2"] {
-  display: none;
-}
-
-.tab input:checked + .tab_label {
-  color: #fff;
-  background-color: #5e51a8;
-}
-.tab input:checked + .tab_label::after {
-  content: '';
-  width: 0;
-  height: 0;
-  display: block;
+.close-button span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  display: inline-block;
   position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -10px;
-  transition: all 0.3s ease 0s;
+  left: calc(50% - 12px);
+  top: 50%;
+  border-radius: 20px;
 }
 
-.tab2 input:checked + .tab_label2 {
-  color: #fff;
-  background-color: #5e51a8;
-}
-.tab2 input:checked + .tab_label2::after {
-  content: '';
-  width: 0;
-  height: 0;
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -10px;
-  transition: all 0.3s ease 0s;
+.close-button span:nth-child(1) {
+  transform: rotate(45deg) translate(-1px, -1px);
 }
 
-
-#tab01:checked ~ #tab01_content,
-#tab02:checked ~ #tab02_content,
-#tab03:checked ~ #tab03_content,
-#tab04:checked ~ #tab04_content,
-#tab05:checked ~ #tab05_content,
-#tab201:checked ~ #tab205_content,
-#tab202:checked ~ #tab206_content{
-  display: block;
-  min-height: 680px;
-  height: 30vh;
+.close-button span:nth-child(2) {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+.layer.is-open {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
 }
 
-.tab_content{
-  position: relative;
-  animation: fadeIn 1s ease;
+.layer.is-open .modal{
+  opacity: 1;
+  visibility: visible;
 }
-.tab_content2{
-  position: relative;
-  animation: fadeIn 1s ease;
-}
-
