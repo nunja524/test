@@ -126,7 +126,7 @@ button {
   color: white;
   font-weight: bold;
 }
-@media (max-width: 768px) {
+@media (max-width: 962px) {
   .container {
 	 width: 95%;
     flex-direction: column;
