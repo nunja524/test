@@ -3,16 +3,53 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ブキ検索ツール</title>
+  <title>わくわくブキチ杯</title>
   <link rel="stylesheet" href="base.css">
 </head>
 <body>
   <div class="container">
     <div class="left-panel">
-      <h2>ランダム結果</h2>
+      <h2>ブキを指定してブキチ杯！</h2>
+      <p>リストで表示するブキを制御できるよ！！<br>
+		<button class="button js-modal-button">詳しい説明はこちら</button></p>
+		<p>ブキチ杯結果<br></p>
+		
+	<table border="1" color="#fff"　style="border-collapse: collapse">
+	<tbody>
+		<tr>
+			<td colspan="2" height="125px">
+				
+	<span id="name01">
+ブキ名がここに出るよ
+	  </span>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" height="125px" width="50%">
+	<span id="weapon01">
+	武器種
+	 </span>
+			
+			</td>
+			<td>
+	<span id="sub01">
+	サブ
+	  </span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+	<span id="special01">
+	スペシャル
+	  </span>
+				</td>
+		</tr>
+	</tbody>
+</table>
       <div id="random-display">ここにランダム結果が表示されます</div>
       <button onclick="randomizeALL()">Let`sブキチ杯!!</button>
       <button onclick="randomize()">リストからブキチ杯!!</button>
+		<div class="line"><p>※ブキリストは2025年6月現在のものです。<br>クリック一回で結果が表示されます。</p></div>
     </div>
     <div class="right-panel">
 	  <div class="filters" id="filters"></div>	

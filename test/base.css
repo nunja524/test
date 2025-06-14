@@ -10,11 +10,15 @@ body {
   background-repeat: no-repeat;
   background-position: right bottom;
 }
+h2{
+
+}
  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    td, th { border: 1px solid #ccc; padding: 4px; text-align: center; }
-    img { height: 24px; }
+    td, th { height: 60px; border: 1px solid #777; padding: 4px; text-align: center; }
+    img { height: 28px; }
     .filters { margin-bottom: 10px; }
-    .filter-group { margin: 4px 0; }
+    .filter-group { margin: 7px 0;
+}
 .filter-option img {
   border: 2px solid transparent;
   border-radius: 4px;
@@ -30,16 +34,17 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .left-panel {
   width: 35%;
-  padding: 20px;
+  height: 100%;
+  padding: 5px 20px;
   background:#BAACD5 ;
 }
 .right-panel {
   width: 65%;
-  padding: 20px;
+  padding: 5px 20px;
 }
 .filter-section > div {
   margin-bottom: 10px;
@@ -54,8 +59,8 @@ body {
 }
 .weapon-list {
   width: 95%;
-  height: 100%;
-  max-height: 300px;
+  height: 60vh;
+  min-height: 500px;
   overflow-y: scroll;
   border: 1px solid #ccc;
   padding: 10px;
@@ -64,6 +69,7 @@ body {
   margin: 10px 0;
 }
 button {
+  margin: 7px 5px;
   font-size:130%;
   position: relative;
   overflow: hidden;
@@ -75,7 +81,42 @@ button {
   border-radius: 15px;
   outline: none;
 }
-.season-badge {
+        Button::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #00c9e8 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	Button:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button2::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #ff8000 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button2:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+.season-badge, .ra_area-badge {
+  margin: 5px;
   padding: 2px 6px;
   border-radius: 8px;
   font-size: 0.9em;
@@ -92,14 +133,14 @@ button {
     order: -1;
   }
 	.weapon-list {
-  max-height: 500px;
+  min-height: 500px;
   overflow-y: scroll;
   border: 1px solid #ccc;
   padding: 10px;
 }
 	.left-panel {
   width: 100%;
-  height: 35%;
+  height: auto;
   padding: 20px;
 }
 	.right-panel {
@@ -112,13 +153,13 @@ button {
 .season-初期実装 { 
 	  color: #555;
 	background-color: hsl(0, 0%, 100%); }
-.season-2022冬 { background-color: hsl(0, 70%, 50%); }
-.season-2023春 { background-color: hsl(27, 70%, 50%); }
-.season-2023夏シーズン { background-color: hsl(54, 50%, 50%); }
+.season-2022冬, .ra_area-短距離 { background-color: hsl(0, 70%, 50%); }
+.season-2023春, .ra_area-中距離 { background-color: hsl(27, 70%, 50%); }
+.season-2023夏, .ra_area-長距離 { background-color: hsl(54, 50%, 50%); }
 .season-2023秋 { background-color: hsl(81, 70%, 30%); }
-.season-2024冬 { background-color: hsl(108, 70%, 30%); }
-.season-2024春 { background-color: hsl(135, 70%, 30%); }
+.season-2023冬 { background-color: hsl(108, 70%, 30%); }
+.season-2024春, .ra_area-短距離チャージャー { background-color: hsl(135, 70%, 30%); }
 .season-2024夏 { background-color: hsl(162, 70%, 30%); }
-.season-2025春 { background-color: hsl(189, 70%, 50%); }
+.season-2025春, .ra_area-長距離チャージャー { background-color: hsl(189, 70%, 50%); }
 .season-2025仮 { background-color: hsl(216, 70%, 50%); }
 .season-2025仮2 { background-color: hsl(233, 70%, 50%); }

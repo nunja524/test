@@ -6,11 +6,32 @@ async function loadWeapons() {
   weapons = await res.json();
   filteredWeapons = weapons;
   generateFilterOptions();
+  loadCheckedWeapons(); // 初回読み込み時に復元
   renderTable(filteredWeapons);
 }
 
 function getUnique(key) {
-  return [...new Set(weapons.map(w => w[key]))];
+  const values = [...new Set(weapons.map(w => w[key]))];
+
+  // シーズンの場合は並び順を明示的に指定
+  if (key === "season") {
+    const seasonOrder = [
+      "初期実装", "2022冬", "2023春", "2023夏",
+      "2023秋", "2023冬", "2024春", "2024夏", "2025夏", "2025仮"
+    ];
+    return seasonOrder.filter(season => values.includes(season));
+  }
+	  if (key === "ra_area") {
+    const ra_areaOrder = [
+      "短距離", "中距離", "長距離", "短距離チャージャー",
+      "長距離チャージャー"
+    ];
+    return ra_areaOrder.filter(ra_area => values.includes(ra_area));
+  }
+
+
+  // その他はアルファベット順（任意）
+  return values.sort();
 }
 
 function generateFilterOptions() {
@@ -21,7 +42,8 @@ function generateFilterOptions() {
     type: "武器種",
     sub: "サブ",
     special: "スペシャル",
-    season: "シーズン"
+    season: "シーズン",
+    ra_area: "Xマッチ区分"
   };
 
   for (const key in keys) {
@@ -35,52 +57,45 @@ function generateFilterOptions() {
       span.dataset.key = key;
       span.dataset.value = val;
 
+      const label = document.createElement(key === "season" || key === "ra_area" ? "span" : "img");
+
       if (key === "season") {
-        const spanLabel = document.createElement("span");
-        spanLabel.textContent = val;
-        spanLabel.className = `season-badge season-${val}`;
-        spanLabel.style.cursor = "pointer";
-        spanLabel.addEventListener("click", () => {
-          spanLabel.classList.toggle("active");
-          spanLabel.style.opacity = spanLabel.classList.contains("active") ? 1 : 0.3;
-          applyFilters();
-        });
-        span.appendChild(spanLabel);
+        label.textContent = val;
+        label.className = `season-badge season-${val}`;
+      } else if (key === "ra_area") {
+        label.textContent = val;
+        label.className = `ra_area-badge ra_area-${val}`;
       } else {
-        const img = document.createElement("img");
-        img.src = "img/" + val;
-        img.alt = val;
-        img.title = val;
-        img.style.opacity = 0.3;
-        img.addEventListener("click", () => {
-          img.classList.toggle("active");
-          img.style.opacity = img.classList.contains("active") ? 1 : 0.3;
-          applyFilters();
-        });
-        span.appendChild(img);
+        label.src = "img/" + val;
+        label.alt = val;
+        label.title = val;
       }
 
-      group.appendChild(span); // ← ここを共通化して1回だけ呼ぶ
+      label.style.cursor = "pointer";
+      label.style.opacity = 0.3;
+
+      label.addEventListener("click", () => {
+        label.classList.toggle("active");
+        label.style.opacity = label.classList.contains("active") ? 1 : 0.3;
+        applyFilters();
+      });
+
+      span.appendChild(label);
+      group.appendChild(span);
     });
 
     filters.appendChild(group);
   }
 }
 
-
 function getActiveFilters() {
-  const result = {
-    type: [],
-    sub: [],
-    special: [],
-    season: []
-  };
+  const result = { type: [], sub: [], special: [], season: [], ra_area: [] };
 
   document.querySelectorAll(".filter-option").forEach(opt => {
     const key = opt.dataset.key;
     const val = opt.dataset.value;
-    const img = opt.querySelector("img,span");
-    if (img.classList.contains("active")) {
+    const item = opt.querySelector("img,span");
+    if (item.classList.contains("active")) {
       result[key].push(val);
     }
   });
@@ -95,27 +110,23 @@ function applyFilters() {
       (f.type.length === 0 || f.type.includes(w.type)) &&
       (f.sub.length === 0 || f.sub.includes(w.sub)) &&
       (f.special.length === 0 || f.special.includes(w.special)) &&
-      (f.season.length === 0 || f.season.includes(w.season))
+      (f.season.length === 0 || f.season.includes(w.season)) &&
+      (f.ra_area.length === 0 || f.ra_area.includes(w.ra_area))
     );
   });
-
   renderTable(filteredWeapons);
 }
 
 function renderTable(list) {
-//追加1
-  // 1. 現在のチェック状態を保存
-  const currentChecks = {};
-  document.querySelectorAll(".weapon-check").forEach(cb => {
-    currentChecks[cb.dataset.name] = cb.checked;
-  });
-		
+  const savedChecks = loadCheckedWeapons(); // 保存されたチェック状態を取得
+
   const tbody = document.getElementById("weaponTableBody");
   tbody.innerHTML = "";
-  list.forEach((w, i) => {
+
+  list.forEach(w => {
     const row = document.createElement("tr");
     row.innerHTML = `
-       <td><input type="checkbox" class="weapon-check" data-name="${w.name}" ${currentChecks[w.name] !== false ? "checked" : ""}></td>
+      <td><input type="checkbox" class="weapon-check" data-name="${w.name}" ${savedChecks[w.name] ? "checked" : ""}></td>
       <td>${w.name}</td>
       <td><img src="img/${w.type}" alt=""></td>
       <td><img src="img/${w.sub}" alt=""></td>
@@ -123,38 +134,51 @@ function renderTable(list) {
       <td><span class="season-badge season-${w.season}">${w.season}</span></td>
     `;
     tbody.appendChild(row);
-	  //追加2
-	        // 2. 保存していたチェック状態を復元
-const cb = row.querySelector(".weapon-check");
-if (currentChecks[w.name]) cb.checked = true;
+  });
+
+  // チェックイベントの追加
+  document.querySelectorAll(".weapon-check").forEach(cb => {
+    cb.addEventListener("change", saveCheckedWeapons);
   });
 }
-	
+
+// チェックボックスの状態保存
+function saveCheckedWeapons() {
+  const checks = {};
+  document.querySelectorAll(".weapon-check").forEach(cb => {
+    checks[cb.dataset.name] = cb.checked;
+  });
+  localStorage.setItem("checkedWeapons", JSON.stringify(checks));
+}
+
+// 状態の復元
+function loadCheckedWeapons() {
+  return JSON.parse(localStorage.getItem("checkedWeapons") || "{}");
+}
 
 function selectAll() {
-  document.querySelectorAll(".weapon-check").forEach(cb => cb.checked = true);
+  document.querySelectorAll(".weapon-check").forEach(cb => {
+    cb.checked = true;
+
+  });
+  saveCheckedWeapons();
 }
 
 function deselectAll() {
-  document.querySelectorAll(".weapon-check").forEach(cb => cb.checked = false);
+  document.querySelectorAll(".weapon-check").forEach(cb => {
+    cb.checked = false;
+  });
+  saveCheckedWeapons();
 }
 
-
-
 function randomizeALL() {
-  // DOM上のチェック済み武器名一覧を取得
-  const checkedNames = Array.from(document.querySelectorAll(".weapon-check:checked"))
-                            .map(cb => cb.dataset.name);
-
-  // JSONデータから、名前がチェックされている武器だけを抽出
-  const checkedWeapons = weapons.filter(w => checkedNames.includes(w.name));
-
+  const savedChecks = loadCheckedWeapons();
+  const checkedWeapons = weapons.filter(w => savedChecks[w.name]);
   const display = document.getElementById("random-display");
   if (checkedWeapons.length === 0) {
     display.innerText = "選択された武器がありません。";
     return;
   }
-
   const r = Math.floor(Math.random() * checkedWeapons.length);
   display.innerText = "ランダム選出: " + checkedWeapons[r].name;
 }
@@ -171,42 +195,3 @@ function randomize() {
 }
 
 loadWeapons();
-// 色のグラデーション生成（赤→紫：例 6段階）
-function generateSeasonColors(count) {
-  const colors = [];
-  for (let i = 0; i < count; i++) {
-    // HSVのH値を0°（赤）から270°（紫）まで均等に割る
-    const h = Math.round((270 / (count - 1)) * i);
-    const color = `hsl(${h}, 70%, 50%)`; // 彩度・明度は固定
-    colors.push(color);
-  }
-  return colors;
-}
-
-// ボタン生成とカラー適用（季節一覧に応じて）
-function createSeasonButtons(seasonList) {
-  const container = document.querySelector('.season-buttons');
-  container.innerHTML = '';
-
-  const colors = generateSeasonColors(seasonList.length);
-
-  seasonList.forEach((season, index) => {
-    const button = document.createElement('button');
-    button.textContent = season;
-    button.className = 'season-btn';
-    button.dataset.value = season;
-    button.style.backgroundColor = colors[index];
-
-    // ON/OFF切り替え
-    button.addEventListener('click', () => {
-      button.classList.toggle('active');
-      // 必要に応じて検索処理をトリガー
-    });
-
-    container.appendChild(button);
-  });
-}
-
-// 使用例：シーズンリストから生成
-const seasonList = ['初期実装', '2023春', '2023夏シーズン', '2023秋', '2024冬', '2024春'];
-createSeasonButtons(seasonList);
