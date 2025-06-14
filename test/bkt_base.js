@@ -14,6 +14,25 @@ function getUnique(key) {
   const values = [...new Set(weapons.map(w => w[key]))];
 
   // シーズンの場合は並び順を明示的に指定
+	  if (key === "type") {
+    const typeOrder = [
+"wep_sh.png","wep_lo.png","wep_ch.png","wep_sl.png","wep_sp.png","wep_mn.png","wep_sy.png","wep_bl.png","wep_hd.png","wep_st.png","wep_wip.png"
+    ];
+    return typeOrder.filter(type => values.includes(type));
+  }
+	  if (key === "sub") {
+    const subOrder = [
+"sub_spb.png","sub_qb.png","sub_sb.png","sub_sp.png","sub_ss.png","sub_tb.png","sub_cb.png","sub_rb.png","sub_jb.png","sub_ps.png","sub_tr.png","sub_pm.png","sub_lm.png","sub_tp.png",
+    ];
+    return subOrder.filter(sub => values.includes(sub));
+  }
+	  if (key === "special") {
+    const specialOrder = [
+"sp_us.png","sp_gb.png","sp_sw.png","sp_ms.png","sp_af.png","sp_nd.png","sp_ps.png","sp_qi.png","sp_mr.png","sp_jp.png","sp_uh.png","sp_ct.png","sp_sr.png","sp_tt.png","sp_ed.png","sp_dt.png","sp_ti.png","sp_ut.png","sp_ss.png"
+    ];
+    return specialOrder.filter(special => values.includes(special));
+  }
+	
   if (key === "season") {
     const seasonOrder = [
       "初期実装", "2022冬", "2023春", "2023夏",
@@ -176,22 +195,63 @@ function randomizeALL() {
   const checkedWeapons = weapons.filter(w => savedChecks[w.name]);
   const display = document.getElementById("random-display");
   if (checkedWeapons.length === 0) {
-    display.innerText = "選択された武器がありません。";
+ document.getElementById("name01").innerHTML  = "選択された武器がありません。";
     return;
   }
   const r = Math.floor(Math.random() * checkedWeapons.length);
-  display.innerText = "ランダム選出: " + checkedWeapons[r].name;
+const selected = checkedWeapons[r];
+
+// ブキ名（テキスト）
+document.getElementById("name01").innerHTML = selected.name;
+
+// 武器種（画像）
+document.getElementById("weapon01").innerHTML = `<img src="img/${selected.type}" alt="武器種" >`;
+
+// サブ（画像）
+document.getElementById("sub01").innerHTML = `<img src="img/${selected.sub}" alt="サブ">`;
+
+// スペシャル（画像）
+document.getElementById("special01").innerHTML = `<img src="img/${selected.special}" alt="スペシャル">`;
+
 }
 
 function randomize() {
   const checked = Array.from(document.querySelectorAll(".weapon-check:checked"));
   const display = document.getElementById("random-display");
   if (checked.length === 0) {
-    display.innerText = "選択された武器がありません。";
+  document.getElementById("name01").innerHTML = "選択された武器がありません。";
     return;
   }
   const r = Math.floor(Math.random() * checked.length);
-  display.innerText = "ランダム選出: " + checked[r].dataset.name;
+const selected2 = checked[r].dataset;
+
+// ブキ名（テキスト）
+document.getElementById("name01").innerHTML = selected2.name;
+
+// 武器種（画像）
+document.getElementById("weapon01").innerHTML = `<img src="img/${selected2.type}" alt="武器種">`;
+
+// サブ（画像）
+document.getElementById("sub01").innerHTML = `<img src="img/${selected.sub}" alt="サブ">`;
+
+// スペシャル（画像）
+document.getElementById("special01").innerHTML = `<img src="img/${selected.special}" alt="スペシャル">`;
 }
 
 loadWeapons();
+
+
+const modal = document.querySelector('.js-modal');
+const modalButton = document.querySelector('.js-modal-button');
+
+// 追記
+const modalClose = document.querySelector('.js-close-button');　// xボタンのjs-close-buttonを取得し変数に格納
+
+modalButton.addEventListener('click', () => {
+  modal.classList.add('is-open');
+});
+
+// 追記
+modalClose.addEventListener('click', () => { // xボタンをクリックしたときのイベントを登録
+  modal.classList.remove('is-open'); 
+});
