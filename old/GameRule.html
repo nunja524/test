@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>主催者用</title>
+  <style>
+	body{
+	background-color: #e6e6fa;
+	Color:#3b434d;
+	background-image: url(back_raidou.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	}
+        p{
+            font-size:1.5rem;
+        }
+        #Button{
+        font-size:1.5rem;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	display:inline-block;
+	background: #3b434d;;
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 15px;
+	outline: none;
+        }
+        #Button::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #00c9e8 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button2{
+        font-size:1.5rem;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	display:inline-block;
+	background: #3b434d;;
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 15px;
+	outline: none;
+        }
+        #Button2::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #00c9e8 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button2:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button3{
+        font-size:1.5rem;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	display:inline-block;
+	background: #3b434d;;
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 15px;
+	outline: none;
+        }
+        #Button3::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #00c9e8 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button3:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+    span {
+      text-decoration:underline;
+    }
+    </style>
+</head>
+<body>
+<h2>ゲームルール!</h2>
+<p>ゲームルールをランダムにするやつ</p>
+  <p>ブキチ杯結果<br>
+<span id="result">ゲームルールがここに出るよ</span></p>
+  <button id="Button">Let'sブキチ杯</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results = [
+ "ガチヤグラ",
+"ガチホコ",
+"ガチエリア"
+    ];
+    $('#Button').on('click', function() {
+      var random = Math.floor( Math.random() * results.length );
+      var result =  results[random];
+      $('#result').html(result);
+    });
+</script>
+<h2>ブキチ杯!!</h2>
+<p>全武器からブキチ杯!!</p>
+  <p>ブキチ杯結果<br>
+<span id="result2">ブキ名がここに出るよ</span></p>
+  <button id="Button2">Let'sブキチ杯</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results2 = [
+ ".52ガロンデコ",
+"パブロ",
+"スプラチャージャーコラボ or スプラスコープコラボ",
+"R-PEN/5H",
+"スプラシューターコラボ",
+"S-BLAST92",
+"ホットブラスターカスタム",
+"カーボンローラー",
+"リッター4Kカスタム or 4Kスコープカスタム",
+"ケルビン525",
+"トライストリンガーコラボ",
+"スクイックリンα",
+"スクリュースロッシャーネオ",
+"ヒッセン・ヒュー",
+"ハイドラント",
+"ボールドマーカーネオ",
+"クアッドホッパーブラック",
+"フィンセント",
+"もみじシューター",
+"ホクサイ・ヒュー",
+"L3リールガンD",
+"エクスプロッシャーカスタム",
+"リッター4K or 4Kスコープ",
+".52ガロン",
+"ラピッドブラスター",
+"ソイチューバーカスタム",
+"スプラシューター",
+"ノーチラス47",
+"クーゲルシュライバー・ヒュー",
+"エクスプロッシャー",
+"バケットスロッシャー",
+"モップリン",
+"Rブラスターエリート",
+"ダイナモローラー",
+"パラシェルター",
+"キャンピングシェルターソレーラ",
+"ワイドローラー",
+"Rブラスターエリートデコ",
+"シャープマーカーネオ",
+"クラッシュブラスターネオ",
+"ロングブラスター",
+"イグザミナー",
+"ドライブワイパーデコ",
+"トライストリンガー",
+"デュアルスイーパー",
+"カーボンローラーデコ",
+"オーバーフロッシャーデコ",
+"ノーチラス79",
+"クーゲルシュライバー",
+".96ガロンデコ",
+"ダイナモローラーテスラ",
+"スプラスピナーコラボ",
+"ワイドローラーコラボ",
+"わかばシューター",
+"スプラマニューバー",
+"ボトルガイザーフォイル",
+"ノヴァブラスターネオ",
+"14式竹筒銃・甲",
+"スプラローラーコラボ",
+"スペースシューターコラボ",
+"LACT-450デコ",
+".96ガロン",
+"クアッドホッパーホワイト",
+"キャンピングシェルター",
+"パラシェルターソレーラ",
+"ヴァリアブルローラーフォイル",
+"ソイチューバー",
+"オーバーフロッシャー",
+"デュアルスイーパーカスタム",
+"ラピッドブラスターデコ",
+"バケットスロッシャーデコ",
+"24式張替傘・甲",
+"バレルスピナー",
+"ガエンFF",
+"N-ZAP85",
+"ノヴァブラスター",
+"L3リールガン",
+"プライムシューターコラボ",
+"LACT-450",
+"スペースシューター",
+"ジムワイパー・ヒュー",
+"ホクサイ",
+"H3リールガンD",
+"ジムワイパー",
+"パブロ・ヒュー",
+"ドライブワイパー",
+"スパイガジェット",
+"スプラマニューバーコラボ",
+"ケルビン525デコ",
+"スプラローラー",
+"ボールドマーカー",
+"ヴァリアブルローラー",
+"モップリンD",
+"スパッタリー・ヒュー",
+"スクリュースロッシャー",
+"スクイックリンβ",
+"プロモデラーMG",
+"スプラチャージャー or スプラスコープ",
+"R-PEN/5B",
+"シャープマーカー",
+"S-BLAST91",
+"スパイガジェットソレーラ",
+"ボトルガイザー",
+"バレルスピナーデコ",
+"N-ZAP89",
+"プロモデラーRG",
+"フィンセント・ヒュー",
+"スパッタリー",
+"ヒッセン",
+"ジェットスイーパーカスタム",
+"クラッシュブラスター",
+"ホットブラスター",
+"スプラスピナー",
+"ジェットスイーパー",
+"H3リールガン",
+"プライムシューター"
+    ];
+    $('#Button2').on('click', function() {
+      var random = Math.floor( Math.random() * results2.length );
+      var result2 =  results2[random];
+      $('#result2').html(result2);
+    });
+</script>
+
+<p>※ブキリストは2024年4月現在のものです。クリック一回で結果が表示されます。</p>
+<br>
+<hr>
+<br>
+<h2>スペシャルでブキチ杯!!</h2>
+<p>リクエスト枠、ランダムでスペシャル名がでるよ!!</p>
+  <p>スペシャル杯結果<br>
+<span id="result3">スペシャル名がここに出るよ</span></p>
+  <button id="Button3">Let'sスペシャル杯</button>
+  <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  
+integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="  crossorigin="anonymous"></script>
+  <script>
+    var results3 = [
+"サメライド",
+"エナジースタンド",
+"アメフラシ",
+"ウルトラハンコ",
+"ウルトラショット",
+"デコイチラシ",
+"テイオウイカ",
+"カニタンク",
+"ジェットパック",
+"ナイスダマ",
+"ショクワンダー",
+"ホップソナー",
+"メガホンレーザー5.1ch",
+"ウルトラチャクチ",
+"スミナガシート",
+"マルチミサイル",
+"キューインキ",
+"グレートバリア",
+"トリプルトルネード"
+    ];
+    $('#Button3').on('click', function() {
+      var random = Math.floor( Math.random() * results3.length );
+      var result3 =  results3[random];
+      $('#result3').html(result3);
+    });
+</script>
+</body>
+</html>

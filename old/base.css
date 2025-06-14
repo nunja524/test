@@ -1,0 +1,271 @@
+@charset "utf-8";
+/* CSS Document */
+	body{
+	font-size:7vh;
+	text-size-adjust:100%;
+	background-color: #e6e6fa;
+	Color:#3b434d;
+	background-image: url(back_raidou.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding: 10px 20px;
+	}
+#main{
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+H2{
+	font-size: 150%;
+}
+.line{
+	width: 100%;
+	border-bottom: dotted 1px;
+	margin-bottom: 30px;
+}
+        p{
+            font-size:130%;
+        }
+        #Button,#Button2,#Button3,#Button4,#Button5,#Button6,#Button7{
+        font-size:130%;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	display:inline-block;
+	background: #3b434d;;
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 15px;
+	outline: none;
+        }
+        #Button::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #00c9e8 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button2::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #ff8000 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button2:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button3::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button3:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button4::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button4:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button5::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button5:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button6:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button6:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+        #Button7:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #aaff00 10%, transparent 10%) no-repeat 50%;
+	transform: scale(10, 10);
+	opacity: 0;
+	transition: transform 0.3s, opacity 1s;
+}
+	#Button7:active::after {
+	transform: scale(0, 0);
+	transition: 0s;
+	opacity: 0.3;
+}
+    span {
+      text-decoration:underline;
+    }
+#name01,#name02{
+	font-size: 135%;
+}
+table{
+	width: 450px;
+	height: 320px;
+	margin-bottom: 20px;
+}
+td{
+	text-align: center;
+}
+/*切り替えタブ関係*/
+.tab,.tab2 {
+	font-size:20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab_label,.tab_label2 {
+  color: #5e51a8;
+  font-weight: bold;
+  text-align: center;
+  border: solid 2px #5e51a8;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  flex: 1;
+  padding: 15px 0;
+  margin: 0 5px; 
+  border-radius: 5px;
+}
+
+.tab_label:hover {
+  opacity: 0.75;
+  text-align: center;
+}
+.tab_label2:hover {
+  opacity: 0.75;
+  text-align: center;
+}
+.tab_content,.tab_content2 {
+  flex: 100%;
+  display: none;
+  overflow: hidden;
+}
+
+input[name="tab_switch"] {
+  display: none;
+}
+input[name="tab_switch2"] {
+  display: none;
+}
+
+.tab input:checked + .tab_label {
+  color: #fff;
+  background-color: #5e51a8;
+}
+.tab input:checked + .tab_label::after {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  transition: all 0.3s ease 0s;
+}
+
+.tab2 input:checked + .tab_label2 {
+  color: #fff;
+  background-color: #5e51a8;
+}
+.tab2 input:checked + .tab_label2::after {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  transition: all 0.3s ease 0s;
+}
+
+
+#tab01:checked ~ #tab01_content,
+#tab02:checked ~ #tab02_content,
+#tab03:checked ~ #tab03_content,
+#tab04:checked ~ #tab04_content,
+#tab05:checked ~ #tab05_content,
+#tab201:checked ~ #tab205_content,
+#tab202:checked ~ #tab206_content{
+  display: block;
+  min-height: 680px;
+  height: 30vh;
+}
+
+.tab_content{
+  position: relative;
+  animation: fadeIn 1s ease;
+}
+.tab_content2{
+  position: relative;
+  animation: fadeIn 1s ease;
+}
+
