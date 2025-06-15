@@ -131,6 +131,7 @@ button {
 	table img{
 	height: 75px;
 }
+	    img { height: 35px; }
   .container {
 	 width: 95%;
     flex-direction: column;
