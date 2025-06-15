@@ -127,7 +127,10 @@ button {
   font-weight: bold;
 }
 @media (max-width: 850px) {
-	 table { font-size: 1.5rem; }
+	 table { font-size: 1.3rem; }
+	table img{
+	height: 75px;
+}
   .container {
 	 width: 95%;
     flex-direction: column;
