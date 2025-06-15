@@ -126,7 +126,8 @@ button {
   color: white;
   font-weight: bold;
 }
-@media (max-width: 962px) {
+@media (max-width: 850px) {
+	 table { font-size: 1.5rem; }
   .container {
 	 width: 95%;
     flex-direction: column;
@@ -135,7 +136,7 @@ button {
     order: -1;
   }
 	.weapon-list {
-  min-height: 500px;
+  height: 50vh;
   overflow-y: scroll;
   border: 1px solid #ccc;
   padding: 10px;
